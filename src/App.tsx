@@ -1,13 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Search from './Pages/Search/Search';
+import Header from './Home/Header/Header';
+import Home from './Pages/Home/Home';
+import Major from './Pages/Major/Major';
+import Universitys from './Pages/HighSchool/Universitys';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-800">
-    Hello world!
-  </h1>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/highschool" element={<Universitys />} />
+        <Route path="/major" element={<Major />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
+    </Router>
   );
 }
 

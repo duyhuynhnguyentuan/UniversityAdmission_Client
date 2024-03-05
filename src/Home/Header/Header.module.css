@@ -1,0 +1,7 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Đảm bảo Navbar hiển thị trên các phần khác của trang */
+ 
+}
