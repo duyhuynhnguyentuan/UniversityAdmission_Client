@@ -44,8 +44,7 @@ export default class Major extends Component<{}, State> {
 
   renderMajor = () => {
     return this.state.majorList.map((item) => (
-      <tr key={item.id}>
-        {/* <td>{item.id}</td> */}
+      <tr>
         <td>{item.taskName}</td>
 
       </tr>
@@ -53,25 +52,27 @@ export default class Major extends Component<{}, State> {
   };
   render() {
     return (
-      <table className={styles.table}>
-      <thead>
-        <tr>
-          {/* <th>id</th> */}
-          <th>Name</th>
-          <th>code</th>
-          <th>category</th>
-          <th>description</th>
-          <th>status</th>
-          <th>effective date</th>
-          <th>university id</th>
-          <th>formalMajor id</th>
-        </tr>
-      </thead>
-      <tbody>
-        { this.renderMajor() }
-      </tbody>
-    </table>
-
-    )
+      <div className='container'>
+        <div className={styles.table}>
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>code</th>
+              <th>category</th>
+              <th>description</th>
+              <th>status</th>
+              <th>effective date</th>
+              <th>university id</th>
+              <th>formalMajor id</th>
+            </tr>
+          </thead>
+          <tbody>
+            {this.renderMajor()}
+          </tbody>
+        </table>
+      </div>
+      </div>
+        )
   }
 }

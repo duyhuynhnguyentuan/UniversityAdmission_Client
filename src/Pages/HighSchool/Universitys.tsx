@@ -46,7 +46,7 @@ import styles from './University.module.css'
     renderUniversity = () => {
       return this.state.universityLists.map((item) => (
         <tr>
-          <td>{item.name}</td>
+          <td >{item.name}</td>
           <td>{item.description}</td>
           <td>{item.abbreviation}</td>
           <td>{item.code}</td>
@@ -60,11 +60,12 @@ import styles from './University.module.css'
 
   render() {
     return (
-      
-        <table className={styles.table}>
+        <div className='container'>
+          <div className={styles.table}>
+        <table className="table table-bordered " >
           <thead>
             <tr>
-              <th>Name</th>
+              <th >Name</th>
               <th>Description</th>
               <th>Abbereviation</th>
               <th>Code</th>
@@ -78,7 +79,10 @@ import styles from './University.module.css'
             { this.renderUniversity() }
           </tbody>
         </table>
-
+        </div>
+        </div>
     )
   }
 }
+
+

@@ -5,6 +5,7 @@ import Header from './Home/Header/Header';
 import Home from './Pages/Home/Home';
 import Major from './Pages/Major/Major';
 import Universitys from './Pages/HighSchool/Universitys';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
