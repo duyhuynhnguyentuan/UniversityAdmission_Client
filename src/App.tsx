@@ -1,13 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import ProfilePage from './components/ProfilePage';
+import SubjectCalPage from './components/SubjectCalPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline text-red-800">
-    Hello world!
-  </h1>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/subject-calculator" element={<SubjectCalPage />} />
+      </Routes>
+    </Router>
   );
 }
 
