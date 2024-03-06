@@ -6,6 +6,7 @@ import Home from './Pages/Home/Home';
 import Major from './Pages/Major/Major';
 import Universitys from './Pages/HighSchool/Universitys';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Home/Footer/Footer';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/major" element={<Major />} />
         <Route path="/search" element={<Search />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
