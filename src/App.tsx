@@ -5,6 +5,14 @@ import RegisterPage from './components/RegisterPage';
 import ProfilePage from './components/ProfilePage';
 import SubjectCalPage from './components/SubjectCalPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Search from './Pages/Search/Search';
+import Header from './Home/Header/Header';
+import Home from './Pages/Home/Home';
+import Major from './Pages/Major/Major';
+import Universitys from './Pages/HighSchool/Universitys';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './Home/Footer/Footer';
+
 
 function App() {
   return (
@@ -15,6 +23,14 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/subject-calculator" element={<SubjectCalPage />} />
       </Routes>
+      <Header />
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/highschool" element={<Universitys />} />
+        <Route path="/major" element={<Major />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
