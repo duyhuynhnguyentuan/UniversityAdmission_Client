@@ -32,15 +32,15 @@ export default function Header() {
       <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <img className={styles.logo} src='https://w7.pngwing.com/pngs/721/978/png-transparent-school-admission-open-thumbnail.png' alt='admission' />
+            <img className={styles.logo} src={require('../../asset/admision.png')} alt='logo' />
             <div className={styles.search}>
-              <input type="text" placeholder="    Search university ..." className={styles.searchInput} />
+            <input type="text" placeholder="    Search university ..."  className={`${styles.searchInput} ${styles.searchInputFocus}`} />
               <FontAwesomeIcon className={styles.iconSearch} icon={faSearch} />
             </div>
             <div className={styles.links}>
-              <NavLink to='/' className={styles.link}>Help</NavLink>
-              <NavLink to='/' className={styles.link}>About</NavLink>
-              <NavLink to='/' className={styles.link}><FontAwesomeIcon icon={faBell} /></NavLink>
+              <NavLink to='/' className={`${styles.link} ${styles.help}`}>Help</NavLink>
+              <NavLink to='/' className={`${styles.link} ${styles.about}`}>About</NavLink>
+              <NavLink to='/' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
               <NavLink to='' className={`${styles.btn} ${styles.login}`}>Login</NavLink>
               <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Sign Up</NavLink>
             </div>

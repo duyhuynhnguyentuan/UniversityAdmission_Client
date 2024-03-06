@@ -83,6 +83,7 @@
   position: absolute;
   top: 51px;
   left: 1045px;
+  color: rgb(13, 110, 253);
 }
 
 .login {
@@ -115,4 +116,28 @@
 .navLinkItem{
   margin-right: 100px;
   font-size: 20px;
+}
+
+.link:hover,
+.link:hover svg {
+  color: blue; 
+}
+
+.login:hover {
+  background-color: rgb(13 110 253); 
+  color: white;
+  transition: 0.5s;
+}
+
+.searchInput:focus {
+  border: 1px solid #eee;
+  -webkit-transition: 0.1s;
+  transition: 0.1s;
+  outline: 1px solid rgb(13, 110, 253);
+}
+
+
+/* Thêm một class mới cho việc xử lý focus */
+.searchInputFocus {
+  outline: none;
 }
