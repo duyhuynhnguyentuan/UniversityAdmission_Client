@@ -38,9 +38,9 @@ export default function Header() {
               <FontAwesomeIcon className={styles.iconSearch} icon={faSearch} />
             </div>
             <div className={styles.links}>
-              <NavLink to='/' className={`${styles.link} ${styles.help}`}>Help</NavLink>
-              <NavLink to='/' className={`${styles.link} ${styles.about}`}>About</NavLink>
-              <NavLink to='/' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
+              <NavLink to='' className={`${styles.link} ${styles.help}`}>Help</NavLink>
+              <NavLink to='' className={`${styles.link} ${styles.about}`}>About</NavLink>
+              <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
               <NavLink to='' className={`${styles.btn} ${styles.login}`}>Login</NavLink>
               <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Sign Up</NavLink>
             </div>
@@ -54,19 +54,22 @@ export default function Header() {
         <div className="collapse navbar-collapse justify-content-left" id="collapsibleNavId">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <NavLink className={`${styles.navLinkHome} nav-link`} to="/">Home</NavLink>
+              <NavLink className={`${styles.navLinkHome} nav-link`} to="/home">TRANG CHỦ</NavLink>
             </li>
             <li className="nav-item active">
-              <NavLink className={`${styles.navLinkItem} nav-link`} to="/highschool">University</NavLink>
+              <NavLink className={`${styles.navLinkItem} nav-link`} to="/highschool">ĐẠI HỌC</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={`${styles.navLinkItem} nav-link`} to="major">Major</NavLink>
+              <NavLink className={`${styles.navLinkItem} nav-link`} to="major">DANH MỤC NGÀNH NGHỀ</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className={`${styles.navLinkItem} nav-link`} to="majorinplan">Major in plan</NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink className={`${styles.navLinkItem} nav-link`} to="search">Search</NavLink>
+            </li> */}
+            <li className="nav-item">
+              <NavLink className={`${styles.navLinkItem} nav-link`} to="score">TÌM KIẾM</NavLink>
             </li>
           </ul>
         </div>
