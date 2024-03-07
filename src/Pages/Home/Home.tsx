@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default class Home extends Component {
   render() {
     return (
-      <Carousel>
-        <Carousel.Item>
+      <Carousel style={{marginTop: '36px'}}>
+        <Carousel.Item style={{width: '100%', height: '600px'}}>
           <img
-            className="d-block w-50"
+            className="d-block " style={{width: '100%'}}
             src={require('../../asset/road-1072823_640.jpg')}
             alt="First slide"
           />
@@ -17,9 +17,9 @@ export default class Home extends Component {
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
+        <Carousel.Item style={{width: '100%', height: '600px'}}>
           <img
-            className="d-block w-50"
+            className="d-block0" style={{width: '100%'}}
             src={require('../../asset/tree-736885_1280.jpg')}
             alt="Second slide"
           />
@@ -29,9 +29,9 @@ export default class Home extends Component {
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> */}
           </Carousel.Caption>
         </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-50"
+        <Carousel.Item style={{width: '100%', height: '600px'}}>
+          <img 
+            className="d-block" style={{width: '100%'}}
             src={require('../../asset/admision.png')}
             alt="Third slide"
           />

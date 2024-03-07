@@ -79,6 +79,10 @@
   
 }
 
+.help, .feedback{
+  width: 70px;
+}
+
 .iconSearch{
   position: absolute;
   top: 51px;

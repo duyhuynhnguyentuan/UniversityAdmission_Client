@@ -12,7 +12,7 @@ export default function Header() {
       const navbar = document.querySelector(`.${styles.navbar}`) as HTMLElement;
 
       if (navbar) {
-        if (scrollTop > 100) {
+        if (scrollTop > 1) {
           navbar.style.top = '0';
         } else {
           navbar.style.top = '100px';
@@ -34,15 +34,15 @@ export default function Header() {
           <div className={styles.header}>
             <img className={styles.logo} src={require('../../asset/admision.png')} alt='logo' />
             <div className={styles.search}>
-            <input type="text" placeholder="    Search university ..."  className={`${styles.searchInput} ${styles.searchInputFocus}`} />
+            <input type="text" placeholder="   Tìm kiếm trường ..."  className={`${styles.searchInput} ${styles.searchInputFocus}`} />
               <FontAwesomeIcon className={styles.iconSearch} icon={faSearch} />
             </div>
             <div className={styles.links}>
-              <NavLink to='' className={`${styles.link} ${styles.help}`}>Help</NavLink>
-              <NavLink to='' className={`${styles.link} ${styles.about}`}>About</NavLink>
+              <NavLink to='' className={`${styles.link} ${styles.help}`}>Hỗ Trợ</NavLink>
+              <NavLink to='' className={`${styles.link} ${styles.feedback}`}>Góp ý</NavLink>
               <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
-              <NavLink to='' className={`${styles.btn} ${styles.login}`}>Login</NavLink>
-              <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Sign Up</NavLink>
+              <NavLink to='' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
+              <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function Header() {
               <NavLink className={`${styles.navLinkItem} nav-link`} to="major">DANH MỤC NGÀNH NGHỀ</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={`${styles.navLinkItem} nav-link`} to="majorinplan">Major in plan</NavLink>
+              <NavLink className={`${styles.navLinkItem} nav-link`} to="majorinplan">KẾ HOẠCH NGÀNH NGHỀ</NavLink>
             </li>
             {/* <li className="nav-item">
               <NavLink className={`${styles.navLinkItem} nav-link`} to="search">Search</NavLink>
