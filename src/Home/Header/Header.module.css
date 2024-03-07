@@ -79,6 +79,10 @@
   
 }
 
+.help, .feedback{
+  width: 70px;
+}
+
 .iconSearch{
   position: absolute;
   top: 51px;
@@ -137,7 +141,7 @@
 }
 
 
-/* Thêm một class mới cho việc xử lý focus */
 .searchInputFocus {
   outline: none;
 }
+
