@@ -17,14 +17,12 @@ import Footer from './Home/Footer/Footer';
 function App() {
   return (
     <Router>
+      <Header />
       <Routes>
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/subject-calculator" element={<SubjectCalPage />} />
-      </Routes>
-      <Header />
-      <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/highschool" element={<Universitys />} />
         <Route path="/major" element={<Major />} />

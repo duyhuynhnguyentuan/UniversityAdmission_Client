@@ -1,11 +1,22 @@
 import React, { useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 
 export default function Header() {
+  const location = useLocation(); // Use the useLocation hook here
+
+  useEffect(() => {
+    // Disable scrolling on login page
+    if (location.pathname === '/login') {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [location.pathname]);
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -41,8 +52,8 @@ export default function Header() {
               <NavLink to='/' className={`${styles.link} ${styles.help}`}>Help</NavLink>
               <NavLink to='/' className={`${styles.link} ${styles.about}`}>About</NavLink>
               <NavLink to='/' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
-              <NavLink to='' className={`${styles.btn} ${styles.login}`}>Login</NavLink>
-              <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Sign Up</NavLink>
+              <NavLink to='/login' className={`${styles.btn} ${styles.login}`}>Login</NavLink>
+              <NavLink to='/register' className={`${styles.btn} ${styles.signup}`}>Sign Up</NavLink>
             </div>
           </div>
         </div>

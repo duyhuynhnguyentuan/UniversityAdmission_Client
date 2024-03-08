@@ -3,15 +3,14 @@
 }
 
 .card {
-    background-color: #002dcc;
+    background-color: #332d2d;
 }
 
 .input {
     margin-left: 85px;
     border: none;
-    background-color: #3458d6;
+    background-color: #332d2d;
     color: white;
-    border-radius: 20px;
     width: 400px;
     height: 45px;
 }
@@ -24,10 +23,10 @@
 }
 
 .registerButton {
-    background-color: red;
+    background-color: #332d2d;
     color: white;
-    border: none;
-    border-radius: 20px;
+    border: white solid 2px;
+    border-radius: 10px;
     width: 200px;
     height: 45px;
     text-transform: uppercase;
@@ -35,7 +34,7 @@
 }
 
 .loginLink {
-    color: red;
+    color: #8f8b8b;
 }
 
 .loginText {

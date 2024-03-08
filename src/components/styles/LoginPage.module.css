@@ -10,7 +10,8 @@
 }
 
 .cardBackground {
-    background-color: #002dcc;
+    margin-top: 0;
+    background-color: #332d2d;
 }
 
 .loginTitle {
@@ -21,9 +22,8 @@
 
 .input {
     border: none;
-    background-color: #3458d6;
+    background-color: #332d2d;
     color: white;
-    border-radius: 20px;
     width: 400px;
     height: 45px;
 }
@@ -36,20 +36,28 @@
 }
 
 .loginButton {
-    background-color: red;
+    background-color: #332d2d;
     color: white;
-    border: none;
-    border-radius: 20px;
+    border: white solid 2px;
+    border-radius: 10px;
     width: 200px;
     height: 45px;
     text-transform: uppercase;
     font-size: 20px;
 }
 
+.signupTextWrapper {
+    position: absolute;
+    bottom: 115px; /* Adjust bottom spacing as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+  }
+
 .signupText {
     color: white;
 }
 
 .signupLink {
-    color: red;
+    color: #8f8b8b;
 }

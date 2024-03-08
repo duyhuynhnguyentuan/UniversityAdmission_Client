@@ -42,15 +42,17 @@ const LoginPage: React.FC = () => {
                 <div className="mb-md-5 mt-md-4 pb-5">
                   <h2 className={`fw-bold mb-2 ${styles.loginTitle}`}>Login</h2>
                   <form onSubmit={handleSubmit} className={styles.loginForm}>
-                  <div className={`form-outline form-white mb-4 ${styles.inputWrapper}`}>
-                    <input type="email" id="typeEmailX" className={styles.input} placeholder='Email address' />
-                  </div>
-                  <div className={`form-outline form-white mb-4 ${styles.inputWrapper}`}>
-                    <input type="password" id="typePasswordX" className={styles.input} placeholder='Password' />
-                  </div>
-                  <p className={`small mb-5 pb-lg-2 ${styles.forgotPassword}`}><a className="text-white-50" href="#!">Forgot password?</a></p>
-                  <button className={styles.loginButton} type="submit">Login</button>
-                  <p className={styles.signupText}>Don't have an account? <a href="/register" className={styles.signupLink}>Sign Up</a></p>
+                    <div className={`form-outline form-white mb-4 ${styles.inputWrapper}`}>
+                      <input type="email" id="typeEmailX" className={styles.input} placeholder='Email address' />
+                    </div>
+                    <div className={`form-outline form-white mb-4 ${styles.inputWrapper}`}>
+                      <input type="password" id="typePasswordX" className={styles.input} placeholder='Password' />
+                    </div>
+                    <p className={`small mb-5 pb-lg-2 ${styles.forgotPassword}`}><a className="text-white-50" href="#!">Forgot password?</a></p>
+                    <button className={styles.loginButton} type="submit">Login</button>
+                    <div className={styles.signupTextWrapper}>
+                      <p className={styles.signupText}>Don't have an account? <a href="/register" className={styles.signupLink}>Sign Up</a></p>
+                    </div>
                   </form>
                   {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
                 </div>

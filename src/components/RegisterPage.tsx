@@ -33,29 +33,7 @@ const RegisterPage: React.FC = () => {
       setErrorMessage('An error occurred during registration');
     }
   };
-
-  // return (
-  //   <div className={styles.registerContainer}>
-  //     <h2>Register</h2>
-  //     <form onSubmit={handleSubmit} className={styles.registerForm}>
-  //       {/* Your input fields */}
-  //       <div>
-  //         <label htmlFor="username">Username:</label>
-  //         <input
-  //           type="text"
-  //           id="username"
-  //           value={username}
-  //           onChange={(e) => setUsername(e.target.value)}
-  //         />
-  //       </div>
-  //       {/* Other input fields (email, password, confirmPassword) */}
-  //       <div className={styles.registerButton}>
-  //         <button type="submit">Sign up</button>
-  //       </div>
-  //     </form>
-  //     {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
-  //   </div>
-  // );
+  
   return (
     <section className={styles.vh100}>
       <div className={`${styles.mask} d-flex align-items-center h-100 ${styles.gradientCustom3}`}>
@@ -81,7 +59,7 @@ const RegisterPage: React.FC = () => {
                     <div className="d-flex justify-content-center">
                       <button type="submit" className={styles.registerButton}>Sign up</button>
                     </div>
-                    <p className={styles.loginText}>Have already an account? <a href="/" className={styles.loginLink}><u>Login</u></a></p>
+                    <p className={styles.loginText}>Have already an account? <a href="/login" className={styles.loginLink}><u>Login</u></a></p>
                   </form>
                   {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
                 </div>
