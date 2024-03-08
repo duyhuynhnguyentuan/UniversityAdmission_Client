@@ -24,9 +24,9 @@ export default function Header() {
 
       if (navbar) {
         if (scrollTop > 100) {
-          navbar.style.top = '0';
+          navbar.classList.add(styles.fixed); // Add fixed class when scrolling
         } else {
-          navbar.style.top = '100px';
+          navbar.classList.remove(styles.fixed); // Remove fixed class when not scrolling
         }
       }
     };

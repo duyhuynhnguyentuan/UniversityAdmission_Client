@@ -22,10 +22,11 @@
 
 .input {
     border: none;
-    background-color: #332d2d;
+    background-color: #6e6a6a;
     color: white;
     width: 400px;
     height: 45px;
+    border-radius: 10px;
 }
 
 .input::placeholder {

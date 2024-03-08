@@ -9,7 +9,8 @@
 .input {
     margin-left: 85px;
     border: none;
-    background-color: #332d2d;
+    background-color: #6e6a6a;
+    border-radius: 10px;
     color: white;
     width: 400px;
     height: 45px;
