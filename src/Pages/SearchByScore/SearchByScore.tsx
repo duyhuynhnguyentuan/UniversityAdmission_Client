@@ -86,7 +86,7 @@ export default class Search extends Component<{}, State> {
             {this.renderScoreInputs()}
           </div>
         </div>
-        <button className="btn btn-primary" style={{marginLeft: '920px', marginBottom: '20px',width: '145px',height: '45px'}} onClick={this.handleSearchClick}>Tìm Kiếm</button>
+        <button className="btn btn-primary" style={{ marginLeft: '920px', marginBottom: '20px', width: '145px', height: '45px' }} onClick={this.handleSearchClick}>Tìm Kiếm</button>
         {this.state.searchResults.length > 0 && (
           <div className='container'>
             <table className="table table-bordered" >

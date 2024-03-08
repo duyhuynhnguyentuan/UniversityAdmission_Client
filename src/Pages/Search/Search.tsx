@@ -1,6 +1,8 @@
-import React, { Component, ChangeEvent } from 'react';
-import Axios from 'axios';
+import React, { Component, ChangeEvent, RefObject } from 'react';
 import styles from './Search.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Axios from 'axios';
 
 interface University {
   name: string;
@@ -13,15 +15,39 @@ interface University {
   address: string;
 }
 
+interface Props {
+  onResultClick: (name: string) => void;
+}
+
 interface State {
   searchQuery: string;
   searchResults: University[];
 }
 
-export default class Search extends Component<{}, State> {
-  state: State = {
-    searchQuery: '',
-    searchResults: []
+class Search extends Component<Props, State> {
+  searchRef: RefObject<HTMLDivElement>;
+
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      searchQuery: '',
+      searchResults: [],
+    };
+    this.searchRef = React.createRef();
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.handleClickOutside as EventListener);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('click', this.handleClickOutside as EventListener);
+  }
+
+  handleClickOutside = (event: Event) => {
+    if (this.searchRef.current && !this.searchRef.current.contains(event.target as Node)) {
+      this.setState({ searchResults: [] });
+    }
   };
 
   handleSearchChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -40,49 +66,30 @@ export default class Search extends Component<{}, State> {
     }
   };
 
-  renderUniversity = () => {
-    return this.state.searchResults.map((item) => (
-      <tr key={item.name}>
-        <td>{item.name}</td>
-        <td>{item.description}</td>
-        <td>{item.abbreviation}</td>
-        <td>{item.code}</td>
-        <td>{item.address}</td>
-        <td>{item.contactInfo}</td>
-        <td>{item.admissionPolicy}</td>
-        <td>{item.yearEstablish}</td>
-      </tr>
-    ));
+  handleResultClick = (name: string) => {
+    this.props.onResultClick(name);
+    this.setState({ searchResults: [] });
   };
 
   render() {
     return (
-      <div>
-        <div className="input-group">
-          <div className={styles.inputSearch}>
-            <input type="text" className="form-control rounded" placeholder="Search..." value={this.state.searchQuery} onChange={this.handleSearchChange} aria-label="Search" aria-describedby="search-addon" />
-          </div>
-        </div>
+      <div className={styles.search} ref={this.searchRef}>
+        <input type="text" placeholder=" Tìm kiếm trường ..." className={`${styles.searchInput} ${styles.searchInputFocus}`} value={this.state.searchQuery} onChange={this.handleSearchChange} />
+        <FontAwesomeIcon className={styles.iconSearch} icon={faSearch} />
         {this.state.searchResults.length > 0 && (
-          <div className='container'>
-            <table className="table table-bordered" >
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Abbreviation</th>
-                  <th>Code</th>
-                  <th>Address</th>
-                  <th>Contact info</th>
-                  <th>Admission policy</th>
-                  <th>Establish year</th>
-                </tr>
-              </thead>
-              <tbody>{this.renderUniversity()}</tbody>
-            </table>
+          <div className={styles.searchResults}>
+            <ul>
+              {this.state.searchResults.map((result) => (
+                <li key={result.name} onClick={() => this.handleResultClick(result.name)}>
+                  {result.name}
+                </li>
+              ))}
+            </ul>
           </div>
         )}
       </div>
     );
   }
 }
+
+export default Search;

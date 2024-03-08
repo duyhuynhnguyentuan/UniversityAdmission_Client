@@ -6,37 +6,35 @@
     margin-bottom: 50px;
 }
 
-.tableTr{
+.tableTr {
     margin-top: 55px;
-
 }
 
 .thName {
     width: 19%;
-    ;
-  }
-  
-  .theadAll {
+}
+
+.theadAll {
     text-align: center;
-  }
+}
 
 .scoreInputs {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin-left: 180px;
-  }
-  
-  .scoreInputs .scoreInputContainer {
-    width: 30%; 
-  }
-  
-  .scoreInputs input {
+}
+
+.scoreInputs .scoreInputContainer {
+    width: 30%;
+}
+
+.scoreInputs input {
     width: 40%;
     margin-bottom: 10px;
     text-align: center;
-  }
+}
 
-  .scoreInputLabel{
+.scoreInputLabel {
     margin-left: 15px;
-  }
+}

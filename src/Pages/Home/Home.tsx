@@ -9,7 +9,7 @@ export default class Home extends Component {
         <Carousel.Item style={{width: '100%', height: '600px'}}>
           <img
             className="d-block " style={{width: '100%'}}
-            src={require('../../asset/road-1072823_640.jpg')}
+            src={require('../../asset/MYU.jpg')}
             alt="First slide"
           />
           <Carousel.Caption>
@@ -20,7 +20,7 @@ export default class Home extends Component {
         <Carousel.Item style={{width: '100%', height: '600px'}}>
           <img
             className="d-block0" style={{width: '100%'}}
-            src={require('../../asset/tree-736885_1280.jpg')}
+            src={require('../../asset/MBS.png')}
             alt="Second slide"
           />
 
@@ -32,7 +32,7 @@ export default class Home extends Component {
         <Carousel.Item style={{width: '100%', height: '600px'}}>
           <img 
             className="d-block" style={{width: '100%'}}
-            src={require('../../asset/admision.png')}
+            src={require('../../asset/YTokyo.png')}
             alt="Third slide"
           />
 

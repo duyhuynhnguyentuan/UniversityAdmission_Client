@@ -19,7 +19,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/highschool" element={<Universitys />} />
         <Route path="/major" element={<Major />} />
-        <Route path="/search" element={<Search />} />
+        
         <Route path="/score" element={<SearchByScore />} />
       </Routes>
       <Footer />
