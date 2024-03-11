@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles/LoginPage.module.css'; // Import the CSS Module
 import axios from 'axios'; // Import Axios
+import { toast } from 'react-toastify'; // Import Toastify
 
 const LoginPage: React.FC = () => {
   // State variables to store email, password, and error message
@@ -14,7 +15,7 @@ const LoginPage: React.FC = () => {
 
     try {
       // Make a POST request to your login API endpoint
-      const response = await axios.post('/login", loginUserCtrl', {
+      const response = await axios.post('/api/v1/login', {
         email,
         password,
       });
@@ -25,6 +26,7 @@ const LoginPage: React.FC = () => {
         // Redirect to another page or perform any other action upon successful login
       } else {
         setErrorMessage('Invalid email or password');
+        
       }
     } catch (error) {
       console.error('Error during login:', error);
