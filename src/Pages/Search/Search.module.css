@@ -1,12 +1,68 @@
 .inputSearch {
     width: 50%;
     align-items: center;
-    margin-top: 100px;
-    margin-left: 500px;
+    margin-top: 52px;
+    margin-left: 300px;
     margin-bottom: 50px;
+    width: 500px;
 }
 
-.tableTr{
+.tableTr {
     margin-top: 55px;
-
 }
+
+
+.container {
+    position: relative;
+}
+
+.popup {
+    position: absolute;
+    top: 64%;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-left: 300px;
+    width: 500px;
+}
+
+  
+  .popup ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .popup li {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .popup li:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .popup .navLink {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .popup .navLink:hover {
+    color: blue;
+  }
+  
+  .popup .navLink.active {
+    font-weight: bold;
+    color: blue;
+  }
+  
+  .active {
+    font-weight: bold;
+    color: blue;
+  }
+
+  

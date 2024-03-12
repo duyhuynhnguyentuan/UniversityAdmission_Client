@@ -3,7 +3,7 @@
   width: 100%;
   top: 100px;
   left: 0;
-  z-index: 1000; 
+  z-index: 999; 
   transition: top 0.15s;
  
 }
@@ -13,6 +13,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  height: 100px;
 }
 
 .links {
@@ -112,7 +113,7 @@
 }
 
 .navLinkHome{
-    margin-left: 500px;
+    margin-left: 290px;
     margin-right: 100px;
     font-size: 20px;
 }
@@ -144,4 +145,8 @@
 .searchInputFocus {
   outline: none;
 }
+
+
+
+
 

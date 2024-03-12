@@ -3,3 +3,38 @@
   margin-top: 100px;
 
 }
+
+.table {
+  margin-top: 100px;
+}
+
+.thName {
+  width: 20%;
+}
+
+.theadAll {
+  text-align: center;
+}
+
+.iconNext {
+  border: none;
+  background: white;
+  color: rgb(13 110 253);
+}
+
+.numberNext {
+  border: none;
+  background-color: #eee;
+  border-radius: 25px;
+  width: 30px;
+  height: 30px;
+  color: rgb(13 110 253);
+  margin: 5px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.activePage {
+  background-color: #007bff;
+  color: white;
+}
