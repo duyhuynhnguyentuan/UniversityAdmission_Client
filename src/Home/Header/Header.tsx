@@ -1,11 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
+import Search from '../../Pages/Search/Search'; // Import the Search component
 
 export default function Header() {
+  // State to store the searched university
+  const [searchedUniversity, setSearchedUniversity] = useState<string | null>(null);
+
+  // Function to handle the click on search result
+  const handleSearchResultClick = (name: string) => {
+    console.log('Clicked on result:', name);
+    setSearchedUniversity(name);
+    // You can perform any other action here based on the clicked result
+  };
+
+  // Effect to handle the scroll event
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -29,25 +40,28 @@ export default function Header() {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <div className={styles.header}>
-            <img className={styles.logo} src={require('../../asset/admision.png')} alt='logo' />
-            <div className={styles.search}>
-            <input type="text" placeholder="   Tìm kiếm trường ..."  className={`${styles.searchInput} ${styles.searchInputFocus}`} />
-              <FontAwesomeIcon className={styles.iconSearch} icon={faSearch} />
-            </div>
-            <div className={styles.links}>
-              <NavLink to='' className={`${styles.link} ${styles.help}`}>Hỗ Trợ</NavLink>
-              <NavLink to='' className={`${styles.link} ${styles.feedback}`}>Góp ý</NavLink>
-              <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
-              <NavLink to='' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
-              <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
-            </div>
+      <div className={styles.container}>
+        <div className={styles.header}>
+          <img className={styles.logo} src={require('../../asset/admision.png')} alt='logo' />
+          <Search onResultClick={handleSearchResultClick} /> {/* Use the Search component */}
+          <div className={styles.links}>
+            <NavLink to='' className={`${styles.link} ${styles.help}`}>Hỗ Trợ</NavLink>
+            <NavLink to='' className={`${styles.link} ${styles.feedback}`}>Góp ý</NavLink>
+            <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
+            <NavLink to='' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
+            <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
           </div>
         </div>
       </div>
 
+      {/* Popup box to display searched university */}
+      {searchedUniversity && (
+        <div className={styles.searchedUniversity}>
+          <p>{searchedUniversity}</p>
+        </div>
+      )}
+
+      {/* Navigation bar */}
       <nav className={`${styles.navbar} navbar navbar-expand-sm navbar-dark bg-primary`}>
         <NavLink className="active" to="/">Home</NavLink>
         <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" />
@@ -57,7 +71,7 @@ export default function Header() {
               <NavLink className={`${styles.navLinkHome} nav-link`} to="/home">TRANG CHỦ</NavLink>
             </li>
             <li className="nav-item active">
-              <NavLink className={`${styles.navLinkItem} nav-link`} to="/highschool">ĐẠI HỌC</NavLink>
+              <NavLink className={`${styles.navLinkItem} nav-link`} to="/university">ĐẠI HỌC</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className={`${styles.navLinkItem} nav-link`} to="major">DANH MỤC NGÀNH NGHỀ</NavLink>
@@ -65,9 +79,9 @@ export default function Header() {
             <li className="nav-item">
               <NavLink className={`${styles.navLinkItem} nav-link`} to="majorinplan">KẾ HOẠCH NGÀNH NGHỀ</NavLink>
             </li>
-            {/* <li className="nav-item">
-              <NavLink className={`${styles.navLinkItem} nav-link`} to="search">Search</NavLink>
-            </li> */}
+            <li className="nav-item">
+              <NavLink className={`${styles.navLinkItem} nav-link`} to="highschool">THPT</NavLink>
+            </li>
             <li className="nav-item">
               <NavLink className={`${styles.navLinkItem} nav-link`} to="score">TÌM KIẾM</NavLink>
             </li>

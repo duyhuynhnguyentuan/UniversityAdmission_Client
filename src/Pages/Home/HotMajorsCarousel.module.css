@@ -1,0 +1,13 @@
+.hotMajorsCarousel {
+    width: 100%;
+  }
+  
+  .carouselContainer {
+    overflow: hidden;
+  }
+  
+  .slide {
+    width: 25%; /* Đảm bảo rằng mỗi slide chiếm 25% chiều rộng */
+    float: left;
+  }
+  
