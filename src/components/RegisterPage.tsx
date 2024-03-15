@@ -3,7 +3,9 @@ import styles from './styles/RegisterPage.module.css';
 import axios from 'axios';
 
 const RegisterPage: React.FC = () => {
-  const [username, setUsername] = useState('');
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [mobile, setMobile] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -12,25 +14,39 @@ const RegisterPage: React.FC = () => {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const role = 'user';
+    //required all fields
+    if (!firstname || !lastname || !mobile || !email || !password || !confirmPassword) {
+      alert('All fields are required');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
     try {
       // Make a POST request to the registration API endpoint
-      const response = await axios.post('registration-api', {
-        username,
+      const response = await axios.post('https://universityadmission.onrender.com/api/v1/auth/register', {
+        firstname,
+        lastname,
         email,
+        mobile,
         password,
-        confirmPassword,
+        role,
       });
 
       // Check if the registration was successful based on the response
-      if (response.data.success) {
+      if (!response.data.error) {
         setErrorMessage('');
-        alert('Registration successful!'); // You may want to redirect the user instead
+        window.location.href = '/login'; 
       } else {
-        setErrorMessage(response.data.message); // Display any error message returned by the API
+        setErrorMessage(response.data.error); // Display any error message returned by the API
       }
     } catch (error) {
       console.error('Error during registration:', error);
-      setErrorMessage('An error occurred during registration');
+      setErrorMessage('An error occurred during registration. Please try again.');
     }
   };
   
@@ -45,7 +61,13 @@ const RegisterPage: React.FC = () => {
                   <h2 className="text-white text-center mb-5">Sign up</h2>
                   <form onSubmit={handleSubmit} className={styles.registerForm}>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
-                      <input type="text" id="name" className={styles.input} value={username} onChange={(e) => setUsername(e.target.value)} placeholder='Username'/>
+                      <input type="text" id="firstname" className={styles.input} value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder='First Name'/>
+                    </div>
+                    <div className={`form-outline mb-4 ${styles.formOutline}`}>
+                      <input type="text" id="lastname" className={styles.input} value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder='Last Name'/>
+                    </div>
+                    <div className={`form-outline mb-4 ${styles.formOutline}`}>
+                      <input type="number" id="mobile" className={styles.input} value={mobile} onChange={(e) => setMobile(e.target.value)} placeholder='Phone'/>
                     </div>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
                       <input type="email" id="email" className={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email'/>

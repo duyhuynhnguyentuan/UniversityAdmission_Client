@@ -1,9 +1,10 @@
 .vh100  {
-    padding-top: 190px;
+    padding-top: 160px;
 }
 
 .card {
     background-color: #332d2d;
+    height: 620px;
 }
 
 .input {

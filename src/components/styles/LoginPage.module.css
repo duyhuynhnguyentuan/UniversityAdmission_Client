@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Jane+OTCaps+Light&display=swap');
-
 /* Rest of your CSS code */
 .gradientCustom {
     background: white;
@@ -10,7 +8,7 @@
 }
 
 .cardBackground {
-    margin-top: 0;
+    margin-top: 120px;
     background-color: #332d2d;
 }
 
@@ -49,7 +47,7 @@
 
 .signupTextWrapper {
     position: absolute;
-    bottom: 200px; /* Adjust bottom spacing as needed */
+    bottom: 100px; /* Adjust bottom spacing as needed */
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -61,4 +59,11 @@
 
 .signupLink {
     color: #8f8b8b;
+}
+
+.errorMessage {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
