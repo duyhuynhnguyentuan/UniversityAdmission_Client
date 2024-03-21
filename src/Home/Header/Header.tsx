@@ -48,8 +48,8 @@ export default function Header() {
             <NavLink to='' className={`${styles.link} ${styles.help}`}>Hỗ Trợ</NavLink>
             <NavLink to='' className={`${styles.link} ${styles.feedback}`}>Góp ý</NavLink>
             <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
-            <NavLink to='' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
-            <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
+            <NavLink to='/login' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
+            <NavLink to='/Register' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
           </div>
         </div>
       </div>
@@ -67,7 +67,7 @@ export default function Header() {
         <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" />
         <div className="collapse navbar-collapse justify-content-left" id="collapsibleNavId">
           <ul className="navbar-nav">
-            <li className="nav-item active">
+<li className="nav-item active">
               <NavLink className={`${styles.navLinkHome} nav-link`} to="/home">TRANG CHỦ</NavLink>
             </li>
             <li className="nav-item active">

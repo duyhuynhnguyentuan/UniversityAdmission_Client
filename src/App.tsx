@@ -1,5 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LoginPage from './components/LoginPage';
+import RegisterPage from './components/RegisterPage';
+import ProfilePage from './components/ProfilePage';
+import SubjectCalPage from './components/SubjectCalPage';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './Home/Header/Header';
 import Home from './Pages/Home/Home';
 import Major from './Pages/Major/Major';
@@ -10,6 +15,7 @@ import SearchByScore from './Pages/SearchByScore/SearchByScore';
 import HighSchool from './Pages/HighSchool/HighSchool';
 import UniversityDetail from './Pages/UniversityDetail/UniversityDetail'; // Sửa lại đường dẫn
 import { useParams } from 'react-router-dom';
+import AdminPage from './components/AdminPage';
 
 function UniversityDetailWrapper() {
   const { code } = useParams<{ code?: string }>(); // Lấy code từ URL
@@ -21,6 +27,11 @@ function App() {
     <Router>
       <Header />
       <Routes>
+      <Route path="/admin" element={<AdminPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/subject-calculator" element={<SubjectCalPage />} />
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/university" element={<Universitys />} />
