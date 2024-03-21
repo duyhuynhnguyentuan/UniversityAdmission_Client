@@ -5,15 +5,22 @@ import RegisterPage from './components/RegisterPage';
 import ProfilePage from './components/ProfilePage';
 import SubjectCalPage from './components/SubjectCalPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Search from './Pages/Search/Search';
 import Header from './Home/Header/Header';
 import Home from './Pages/Home/Home';
 import Major from './Pages/Major/Major';
-import Universitys from './Pages/HighSchool/Universitys';
+import Universitys from './Pages/University/Universitys';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Home/Footer/Footer';
+import SearchByScore from './Pages/SearchByScore/SearchByScore';
+import HighSchool from './Pages/HighSchool/HighSchool';
+import UniversityDetail from './Pages/UniversityDetail/UniversityDetail'; // Sửa lại đường dẫn
+import { useParams } from 'react-router-dom';
 import AdminPage from './components/AdminPage';
 
+function UniversityDetailWrapper() {
+  const { code } = useParams<{ code?: string }>(); // Lấy code từ URL
+  return code ? <UniversityDetail code={code} /> : null; // Kiểm tra nếu code tồn tại
+}
 
 function App() {
   return (
@@ -25,10 +32,14 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/subject-calculator" element={<SubjectCalPage />} />
+        <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/highschool" element={<Universitys />} />
+        <Route path="/university" element={<Universitys />} />
+        {/* Sử dụng component UniversityDetailWrapper để truyền id */}
+        <Route path="/university/:code" element={<UniversityDetailWrapper />} />
         <Route path="/major" element={<Major />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/score" element={<SearchByScore />} />
+        <Route path="/highschool" element={<HighSchool />} />
       </Routes>
       <Footer />
     </Router>

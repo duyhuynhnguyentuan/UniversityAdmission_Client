@@ -1,0 +1,42 @@
+.inputSearch {
+    width: 50%;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: 500px;
+    margin-bottom: 50px;
+}
+
+.tableTr{
+    margin-top: 55px;
+
+}
+
+.thName {
+    width: 19%;
+    ;
+  }
+  
+  .theadAll {
+    text-align: center;
+  }
+
+.scoreInputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 180px;
+  }
+  
+  .scoreInputs .scoreInputContainer {
+    width: 30%; 
+  }
+  
+  .scoreInputs input {
+    width: 40%;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .scoreInputLabel{
+    margin-left: 15px;
+  }
