@@ -29,7 +29,7 @@ const LoginPage: React.FC = () => {
         setErrorMessage('');
         localStorage.setItem('token', response.data.token);
         window.location.href = '/admin';
-        }else{
+        }else if (response.data.role === 'user'){
           setErrorMessage('');
         localStorage.setItem('token', response.data.token);
         window.location.href = '/home';
