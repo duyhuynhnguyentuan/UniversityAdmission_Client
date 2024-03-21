@@ -74,9 +74,9 @@ export default class Universitys extends Component<{}, State> {
     const currentUniversities = universityLists.slice(indexOfFirstUniversity, indexOfLastUniversity);
 
     return currentUniversities.map((item) => (
-      <tr key={item.code}>
+      <tr key={item.id}>
         <td>
-          <Link to={`/university/${item.id}`}>{item.name}</Link>
+        <Link to={`/university/${item.code}`}>{item.name}</Link>
         </td>
         <td className={styles.theadAll}>{item.abbreviation}</td>
         <td className={styles.theadAll}>{item.code}</td>
