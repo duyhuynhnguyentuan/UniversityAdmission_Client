@@ -12,6 +12,7 @@ import Major from './Pages/Major/Major';
 import Universitys from './Pages/HighSchool/Universitys';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Home/Footer/Footer';
+import AdminPage from './components/AdminPage';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
+      <Route path="/admin" element={<AdminPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/profile" element={<ProfilePage />} />

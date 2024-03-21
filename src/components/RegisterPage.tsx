@@ -20,7 +20,6 @@ const RegisterPage: React.FC = () => {
       alert('All fields are required');
       return;
     }
-
     if (password !== confirmPassword) {
       alert('Passwords do not match');
       return;
@@ -38,10 +37,10 @@ const RegisterPage: React.FC = () => {
       });
 
       // Check if the registration was successful based on the response
-      if (!response.data.error) {
+      if (response.status === 200) {
         setErrorMessage('');
         window.location.href = '/login'; 
-      } else {
+      } else if (response.data.error === 'User with this email already exists'){
         setErrorMessage(response.data.error); // Display any error message returned by the API
       }
     } catch (error) {

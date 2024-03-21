@@ -25,9 +25,15 @@ const LoginPage: React.FC = () => {
       console.log("check login", response.data.token);
 
       if (response.status === 200 && response.data.token) {
+        if(response.data.role === 'admin'){
         setErrorMessage('');
         localStorage.setItem('token', response.data.token);
+        window.location.href = '/admin';
+        }else{
+          setErrorMessage('');
+        localStorage.setItem('token', response.data.token);
         window.location.href = '/home';
+        }
       } else {
         setErrorMessage('Invalid email or password');
       }
