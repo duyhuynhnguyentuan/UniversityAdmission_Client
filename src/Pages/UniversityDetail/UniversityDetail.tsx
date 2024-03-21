@@ -1,6 +1,4 @@
-// UniversityDetail.tsx
-
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Axios from 'axios';
 
 interface UniversityDetailProps {
@@ -20,9 +18,9 @@ interface University {
 }
 
 const UniversityDetail: React.FC<UniversityDetailProps> = ({ code }) => {
-  const [university, setUniversity] = useState<University | null>(null);
+  const [university, setUniversity] = React.useState<University | null>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     Axios.get<University>(`https://universityadmission.onrender.com/api/v1/university/${code}`)
       .then((result) => {
         console.log(result.data);
