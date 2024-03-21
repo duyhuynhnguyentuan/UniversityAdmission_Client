@@ -9,8 +9,6 @@
 }
 
 .container {
-
-  position: fixed !important;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -147,8 +145,3 @@
 .searchInputFocus {
   outline: none;
 }
-
-
-
-
-

@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import React, { useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
@@ -19,17 +17,6 @@ export default function Header() {
   };
 
   // Effect to handle the scroll event
-  const location = useLocation(); // Use the useLocation hook here
-
-  useEffect(() => {
-    // Disable scrolling on login page
-    if (location.pathname === '/login') {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-  }, [location.pathname]);
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
@@ -38,10 +25,8 @@ export default function Header() {
       if (navbar) {
         if (scrollTop > 1) {
           navbar.style.top = '0';
-        if (scrollTop > 100) {
-          navbar.classList.add(styles.fixed); // Add fixed class when scrolling
         } else {
-          navbar.classList.remove(styles.fixed); // Remove fixed class when not scrolling
+          navbar.style.top = '100px';
         }
       }
     };
@@ -63,24 +48,8 @@ export default function Header() {
             <NavLink to='' className={`${styles.link} ${styles.help}`}>Hỗ Trợ</NavLink>
             <NavLink to='' className={`${styles.link} ${styles.feedback}`}>Góp ý</NavLink>
             <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
-            <NavLink to='' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
-            <NavLink to='' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
-    <div className={styles.wrapper}>
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <div className={styles.header}>
-            <img className={styles.logo} src={require('../../asset/admision.png')} alt='logo' />
-            <div className={styles.search}>
-            <input type="text" placeholder="    Search university ..."  className={`${styles.searchInput} ${styles.searchInputFocus}`} />
-              <FontAwesomeIcon className={styles.iconSearch} icon={faSearch} />
-            </div>
-            <div className={styles.links}>
-              <NavLink to='/' className={`${styles.link} ${styles.help}`}>Help</NavLink>
-              <NavLink to='/' className={`${styles.link} ${styles.about}`}>About</NavLink>
-              <NavLink to='/' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
-              <NavLink to='/login' className={`${styles.btn} ${styles.login}`}>Login</NavLink>
-              <NavLink to='/register' className={`${styles.btn} ${styles.signup}`}>Sign Up</NavLink>
-            </div>
+            <NavLink to='/login' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
+            <NavLink to='/Register' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
           </div>
         </div>
       </div>
@@ -98,7 +67,7 @@ export default function Header() {
         <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation" />
         <div className="collapse navbar-collapse justify-content-left" id="collapsibleNavId">
           <ul className="navbar-nav">
-            <li className="nav-item active">
+<li className="nav-item active">
               <NavLink className={`${styles.navLinkHome} nav-link`} to="/home">TRANG CHỦ</NavLink>
             </li>
             <li className="nav-item active">
