@@ -35,11 +35,11 @@ const LoginPage: React.FC = () => {
         window.location.href = '/home';
         }
       } else {
-        setErrorMessage('Invalid email or password');
+        setErrorMessage('Email hoặc mật khẩu chưa đúng!');
       }
     } catch (error) {
       console.error('Error during login:', error);
-      setErrorMessage('Invalid email or password');
+      setErrorMessage('Email hoặc mật khẩu chưa đúng!');
     }
   };
 
@@ -51,13 +51,13 @@ const LoginPage: React.FC = () => {
             <div className={styles.cardBackground} style={{ borderRadius: '1rem' }}>
               <div className="card-body p-5 text-center">
                 <div className="mb-md-5 mt-md-4 pb-5">
-                  <h2 className={`fw-bold mb-2 ${styles.loginTitle}`}>Login</h2>
+                  <h2 className={`fw-bold mb-2 ${styles.loginTitle}`}>Đăng Nhập</h2>
                     <div className={`form-outline form-white mb-4 ${styles.inputWrapper}`}>
                       <input 
                         type="email" 
                         id="typeEmailX" 
                         className={styles.input} 
-                        placeholder='Email address' 
+                        placeholder='Email' 
                         value={email} 
                         onChange={(e) => setEmail(e.target.value)} 
                       />
@@ -67,15 +67,14 @@ const LoginPage: React.FC = () => {
                         type="password" 
                         id="typePasswordX" 
                         className={styles.input} 
-                        placeholder='Password' 
+                        placeholder='Mật Khẩu' 
                         value={password} 
                         onChange={(e) => setPassword(e.target.value)} 
                       />
                     </div>
-                    {/* <p className={`small mb-5 pb-lg-2 ${styles.forgotPassword}`}><a className="text-white-50" href="#!">Forgot password?</a></p> */}
-                    <button className={styles.loginButton} onClick={() => handleLogin()}>Login</button>
+                    <button className={styles.loginButton} onClick={() => handleLogin()}>Đăng Nhập</button>
                     <div className={styles.signupTextWrapper}>
-                      <p className={styles.signupText}>Don't have an account? <a href="/register" className={styles.signupLink}>Sign Up</a></p>
+                      <p className={styles.signupText}>Don't have an account? <a href="/register" className={styles.signupLink}>Đăng Ký</a></p>
                     </div>
                   {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
                 </div>

@@ -4,6 +4,7 @@ import styles from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import Search from '../../Pages/Search/Search'; // Import the Search component
+import axios from 'axios';
 
 export default function Header() {
   // State to store the searched university
@@ -14,6 +15,16 @@ export default function Header() {
     console.log('Clicked on result:', name);
     setSearchedUniversity(name);
     // You can perform any other action here based on the clicked result
+  };
+
+  const handleLogout = async () => {
+    
+      // Gửi yêu cầu đến API logout
+      const response = await axios.post('https://your-backend.com/api/logout', {
+      });
+      localStorage.removeItem('token');
+      window.location.href = '/home';
+    
   };
 
   // Effect to handle the scroll event
@@ -49,7 +60,8 @@ export default function Header() {
             <NavLink to='' className={`${styles.link} ${styles.feedback}`}>Góp ý</NavLink>
             <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
             <NavLink to='/login' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
-            <NavLink to='/Register' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
+            <NavLink to='/register' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
+            <NavLink to='' className={`${styles.btn} ${styles.logout}`} onClick={handleLogout}>Đăng Xuất</NavLink>
           </div>
         </div>
       </div>

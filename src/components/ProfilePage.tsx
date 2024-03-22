@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './styles/ProfilePage.module.css'; // Import the CSS file for this component
 
 const ProfilePage: React.FC = () => {
+  // State to store user profile data
+  const [profileData, setProfileData] = useState<any>(null); // Change 'any' to the type of your profile data if possible
+
+  useEffect(() => {
+    const fetchUserProfile = async () => {
+      try {
+        // Fetch user profile data from the API
+        const response = await axios.get('https://universityadmission.onrender.com/api/v1/auth/user/65eff764fe3bcd72e2647f42');
+
+        // If request is successful, set profile data in state
+        if (response.status === 200) {
+          setProfileData(response.data);
+        } else {
+          console.error('Failed to fetch user profile data');
+        }
+      } catch (error) {
+        console.error('Error fetching user profile:', error);
+      }
+    };
+
+    // Call the fetchUserProfile function when the component mounts
+    fetchUserProfile();
+  }, []);
+
   return (
     <section className="vh-100" style={{ backgroundColor: '#f4f5f7' }}>
       <div className="container py-5 h-100">
@@ -11,46 +36,44 @@ const ProfilePage: React.FC = () => {
               <div className="row g-0">
                 <div className="col-md-4 gradient-custom text-center text-white" style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                   <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="Avatar" className="img-fluid my-5" style={{ width: 80 }} />
-                  <h5 className='text-black'>John Doe</h5>
+                  <h5 className='text-black'>{profileData ? `${profileData.firstname} ${profileData.lastname}` : 'Loading...'}</h5>
                   <i className="far fa-edit mb-5" />
                 </div>
                 <div className="col-md-8">
                   <div className="card-body p-4">
-                    <h6>Information</h6>
+                    <h6>Thông tin</h6>
                     <hr className="mt-0 mb-4" />
                     <div className="row pt-1">
-                      <div className="col-6 mb-3">
-                        <h6>First Name</h6>
-                        <p className="text-muted">John</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Last Name</h6>
-                        <p className="text-muted">Doe</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Email</h6>
-                        <p className="text-muted">johndoe@gmail.com</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Mobile</h6>
-                        <p className="text-muted">123 456 789</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Birthday</h6>
-                        <p className="text-muted">1990-01-01</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Role</h6>
-                        <p className="text-muted">User</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Gender</h6>
-                        <p className="text-muted">Male</p>
-                      </div>
-                      <div className="col-12 mb-3">
-                        <h6>Address</h6>
-                        <p className="text-muted">123 Street, City, Country</p>
-                      </div>
+                      {/* Render user profile data here */}
+                      {profileData && (
+                        <>
+                          <div className="col-6 mb-3">
+                            <h6>Tên</h6>
+                            <p className="text-muted">{profileData.firstname}</p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <h6>Họ</h6>
+                            <p className="text-muted">{profileData.lastname}</p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <h6>Email</h6>
+                            <p className="text-muted">{profileData.email}</p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <h6>Số điện thoại</h6>
+                            <p className="text-muted">{profileData.mobile}</p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <h6>Vai trò</h6>
+                            <p className="text-muted">{profileData.role}</p>
+                          </div>
+                          <div className="col-6 mb-3">
+                            <h6>Giới tính</h6>
+                            <p className="text-muted">{profileData.gender}</p>
+                          </div>
+                          {/* Add other profile fields here */}
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -62,6 +85,5 @@ const ProfilePage: React.FC = () => {
     </section>
   );
 }
-
 
 export default ProfilePage;
