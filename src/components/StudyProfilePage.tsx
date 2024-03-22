@@ -1,7 +1,7 @@
 import React from 'react';
-import './styles/ProfilePage.module.css'; // Import the CSS file for this component
+import './styles/StudyProfilePage.module.css'; // Import the CSS file for this component
 
-const ProfilePage: React.FC = () => {
+const StudyProfilePage: React.FC = () => {
   return (
     <section className="vh-100" style={{ backgroundColor: '#f4f5f7' }}>
       <div className="container py-5 h-100">
@@ -28,28 +28,16 @@ const ProfilePage: React.FC = () => {
                         <p className="text-muted">Doe</p>
                       </div>
                       <div className="col-6 mb-3">
-                        <h6>Email</h6>
-                        <p className="text-muted">johndoe@gmail.com</p>
+                        <h6>High School</h6>
+                        <p className="text-muted">THPT Chuyên Lê Hồng Phong</p>
                       </div>
                       <div className="col-6 mb-3">
-                        <h6>Mobile</h6>
-                        <p className="text-muted">123 456 789</p>
+                        <h6>School Year</h6>
+                        <p className="text-muted">2023</p>
                       </div>
                       <div className="col-6 mb-3">
-                        <h6>Birthday</h6>
-                        <p className="text-muted">1990-01-01</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Role</h6>
-                        <p className="text-muted">User</p>
-                      </div>
-                      <div className="col-6 mb-3">
-                        <h6>Gender</h6>
-                        <p className="text-muted">Male</p>
-                      </div>
-                      <div className="col-12 mb-3">
-                        <h6>Address</h6>
-                        <p className="text-muted">123 Street, City, Country</p>
+                        <h6>Grade</h6>
+                        <p className="text-danger">26.5</p>
                       </div>
                     </div>
                   </div>
@@ -64,4 +52,4 @@ const ProfilePage: React.FC = () => {
 }
 
 
-export default ProfilePage;
+export default StudyProfilePage;
