@@ -76,7 +76,7 @@ const LoginPage: React.FC = () => {
                     </div>
                     <button className={styles.loginButton} onClick={() => handleLogin()}>Đăng Nhập</button>
                     <div className={styles.signupTextWrapper}>
-                      <p className={styles.signupText}>Don't have an account? <a href="/register" className={styles.signupLink}>Đăng Ký</a></p>
+                      <p className={styles.signupText}>Chưa có tài khoản? <a href="/register" className={styles.signupLink}>Đăng Ký</a></p>
                     </div>
                   {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
                 </div>

@@ -57,30 +57,30 @@ const RegisterPage: React.FC = () => {
             <div className="col-12 col-md-9 col-lg-7 col-xl-6">
               <div className={styles.card} style={{ borderRadius: 15 }}>
                 <div className="card-body p-5">
-                  <h2 className="text-white text-center mb-5">Sign up</h2>
+                  <h2 className="text-white text-center mb-5">Đăng Ký</h2>
                   <form onSubmit={handleSubmit} className={styles.registerForm}>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
-                      <input type="text" id="firstname" className={styles.input} value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder='First Name'/>
+                      <input type="text" id="firstname" className={styles.input} value={firstname} onChange={(e) => setFirstname(e.target.value)} placeholder='Tên'/>
                     </div>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
-                      <input type="text" id="lastname" className={styles.input} value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder='Last Name'/>
+                      <input type="text" id="lastname" className={styles.input} value={lastname} onChange={(e) => setLastname(e.target.value)} placeholder='Họ'/>
                     </div>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
-                      <input type="number" id="mobile" className={styles.input} value={mobile} onChange={(e) => setMobile(e.target.value)} placeholder='Phone'/>
+                      <input type="number" id="mobile" className={styles.input} value={mobile} onChange={(e) => setMobile(e.target.value)} placeholder='Số điện thoại'/>
                     </div>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
                       <input type="email" id="email" className={styles.input} value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email'/>
                     </div>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
-                      <input type="password" id="password" className={styles.input} value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
+                      <input type="password" id="password" className={styles.input} value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Mật khẩu'/>
                     </div>
                     <div className={`form-outline mb-4 ${styles.formOutline}`}>
-                      <input type="password" id="confirmPassword" className={styles.input} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Confirm password'/>
+                      <input type="password" id="confirmPassword" className={styles.input} value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Nhập lại mật khẩu'/>
                     </div>
                     <div className="d-flex justify-content-center">
-                      <button type="submit" className={styles.registerButton}>Sign up</button>
+                      <button type="submit" className={styles.registerButton}>Đăng Ký</button>
                     </div>
-                    <p className={styles.loginText}>Have already an account? <a href="/login" className={styles.loginLink}><u>Login</u></a></p>
+                    <p className={styles.loginText}>Đã có tài khoản? <a href="/login" className={styles.loginLink}><u>Đăng nhập</u></a></p>
                   </form>
                   {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
                 </div>
