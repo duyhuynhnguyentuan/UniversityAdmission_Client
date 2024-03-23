@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './styles/LoginPage.module.css';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 
 const LoginPage: React.FC = () => {
   // State variables to store email, password, and error message
