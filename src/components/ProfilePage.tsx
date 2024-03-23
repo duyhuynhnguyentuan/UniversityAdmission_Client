@@ -64,10 +64,6 @@ const ProfilePage: React.FC = () => {
                             <p className="text-muted">{profileData.mobile}</p>
                           </div>
                           <div className="col-6 mb-3">
-                            <h6>Vai trò</h6>
-                            <p className="text-muted">{profileData.role}</p>
-                          </div>
-                          <div className="col-6 mb-3">
                             <h6>Giới tính</h6>
                             <p className="text-muted">{profileData.gender}</p>
                           </div>

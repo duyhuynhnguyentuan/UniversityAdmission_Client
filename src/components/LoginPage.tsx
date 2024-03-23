@@ -8,6 +8,7 @@ const LoginPage: React.FC = () => {
   const [email, setEmail] = useState(''); // Changed from username to email
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Function to handle form submission
   const handleLogin = async () => {
@@ -29,10 +30,12 @@ const LoginPage: React.FC = () => {
         setErrorMessage('');
         localStorage.setItem('token', response.data.token);
         window.location.href = '/admin';
+        setIsLoggedIn(true);
         }else if (response.data.role === 'user'){
           setErrorMessage('');
         localStorage.setItem('token', response.data.token);
         window.location.href = '/home';
+        setIsLoggedIn(true);
         }
       } else {
         setErrorMessage('Email hoặc mật khẩu chưa đúng!');

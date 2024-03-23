@@ -9,6 +9,7 @@ import axios from 'axios';
 export default function Header() {
   // State to store the searched university
   const [searchedUniversity, setSearchedUniversity] = useState<string | null>(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   // Function to handle the click on search result
   const handleSearchResultClick = (name: string) => {
@@ -17,11 +18,8 @@ export default function Header() {
     // You can perform any other action here based on the clicked result
   };
 
-  const handleLogout = async () => {
-    
-      // Gửi yêu cầu đến API logout
-      const response = await axios.post('https://your-backend.com/api/logout', {
-      });
+  const handleLogout =  () => {
+ 
       localStorage.removeItem('token');
       window.location.href = '/home';
     
@@ -29,6 +27,10 @@ export default function Header() {
 
   // Effect to handle the scroll event
   useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      setIsLoggedIn(true); // If token exists, set login status to true
+    }
     const handleScroll = () => {
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const navbar = document.querySelector(`.${styles.navbar}`) as HTMLElement;
@@ -40,13 +42,15 @@ export default function Header() {
           navbar.style.top = '100px';
         }
       }
-    };
+    }
+    ;
 
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
+    
   }, []);
 
   return (
@@ -59,9 +63,14 @@ export default function Header() {
             <NavLink to='' className={`${styles.link} ${styles.help}`}>Hỗ Trợ</NavLink>
             <NavLink to='' className={`${styles.link} ${styles.feedback}`}>Góp ý</NavLink>
             <NavLink to='' className={`${styles.link} ${styles.bell}`}><FontAwesomeIcon icon={faBell} /></NavLink>
-            <NavLink to='/login' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
-            <NavLink to='/register' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
-            <NavLink to='' className={`${styles.btn} ${styles.logout}`} onClick={handleLogout}>Đăng Xuất</NavLink>
+            {isLoggedIn ? (
+              <NavLink to='' className={`${styles.btn} ${styles.logout}`} onClick={handleLogout}>Đăng Xuất</NavLink>
+            ) : (
+              <>
+                <NavLink to='/login' className={`${styles.btn} ${styles.login}`}>Đăng Nhập</NavLink>
+                <NavLink to='/register' className={`${styles.btn} ${styles.signup}`}>Đăng Ký</NavLink>
+              </>
+            )}
           </div>
         </div>
       </div>
