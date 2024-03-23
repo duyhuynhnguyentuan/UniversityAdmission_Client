@@ -3,7 +3,7 @@
   width: 100%;
   top: 100px;
   left: 0;
-  z-index: 999; 
+  z-index: 1000; 
   transition: top 0.15s;
  
 }
@@ -13,7 +13,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  height: 100px;
 }
 
 .links {
@@ -100,11 +99,6 @@
   color: #fff; 
 }
 
-.logout {
-  background-color: #1f4670; 
-  color: #fff; 
-}
-
 .btn {
   border: 1px solid transparent; 
   border-radius: 5px; 
@@ -118,7 +112,7 @@
 }
 
 .navLinkHome{
-    margin-left: 290px;
+    margin-left: 500px;
     margin-right: 100px;
     font-size: 20px;
 }
