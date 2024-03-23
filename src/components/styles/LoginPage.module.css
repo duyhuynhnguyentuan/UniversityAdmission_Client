@@ -5,10 +5,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 10px;
 }
 
 .cardBackground {
-    margin-top: 120px;
+    margin-top: 50px;
     background-color: #332d2d;
 }
 

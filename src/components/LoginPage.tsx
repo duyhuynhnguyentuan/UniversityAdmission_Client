@@ -49,8 +49,8 @@ const LoginPage: React.FC = () => {
     <section className={styles.gradientCustom}>
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-12 col-md-8 col-lg-6 col-xl-5">
-            <div className={styles.cardBackground} style={{ borderRadius: '1rem' }}>
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5">; 
+            <div className={styles.cardBackground} style={{ borderRadius: '1rem', marginTop: '-60px' }}>
               <div className="card-body p-5 text-center">
                 <div className="mb-md-5 mt-md-4 pb-5">
                   <h2 className={`fw-bold mb-2 ${styles.loginTitle}`}>Đăng Nhập</h2>
@@ -76,7 +76,7 @@ const LoginPage: React.FC = () => {
                     </div>
                     <button className={styles.loginButton} onClick={() => handleLogin()}>Đăng Nhập</button>
                     <div className={styles.signupTextWrapper}>
-                      <p className={styles.signupText}>Don't have an account? <a href="/register" className={styles.signupLink}>Đăng Ký</a></p>
+                      <p className={styles.signupText}>Chưa có tài khoản? <a href="/register" className={styles.signupLink}>Đăng Ký</a></p>
                     </div>
                   {errorMessage && <div className={styles.errorMessage}>{errorMessage}</div>}
                 </div>

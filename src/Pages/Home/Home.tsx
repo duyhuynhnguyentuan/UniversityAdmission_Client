@@ -6,7 +6,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <Carousel style={{ marginTop: '36px' }}>
+        <Carousel style={{ marginTop: '20px' }}>
           <Carousel.Item style={{ width: '100%', height: '600px' }}>
             <img
               className="d-block "
