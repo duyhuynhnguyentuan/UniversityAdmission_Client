@@ -1,6 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import { useParams } from 'react-router-dom';
+import './UniversityDetail.css'; // Import CSS file for table border styling
 
 interface UniversityDetailProps {
   code: string;
@@ -20,8 +21,9 @@ interface University {
 
 const UniversityDetail = () => {
   const [university, setUniversity] = React.useState<University | null>(null);
-    const { _id } = useParams();
-  console.log(_id)
+  const { _id } = useParams();
+  console.log(_id);
+
   React.useEffect(() => {
     Axios.get<University>(`https://universityadmission.onrender.com/api/v1/university/${_id}`)
       .then((result) => {
@@ -40,13 +42,38 @@ const UniversityDetail = () => {
   return (
     <div>
       <h1>{university.name}</h1>
-      <p>Abbreviation: {university.abbreviation}</p>
-      <p>Code: {university.code}</p>
-      <p>Description: {university.description}</p>
-      <p>Address: {university.address}</p>
-      <p>Contact Info: {university.contactInfo}</p>
-      <p>Admission Policy: {university.admissionPolicy}</p>
-      <p>Year Established: {university.yearEstablish}</p>
+      <table className="bordered-table"> {/* Apply CSS class for border styling */}
+        <tbody>
+          <tr>
+            <td>Abbreviation:</td>
+            <td>{university.abbreviation}</td>
+          </tr>
+          <tr>
+            <td>Code:</td>
+            <td>{university.code}</td>
+          </tr>
+          <tr>
+            <td>Description:</td>
+            <td>{university.description}</td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>{university.address}</td>
+          </tr>
+          <tr>
+            <td>Contact Info:</td>
+            <td>{university.contactInfo}</td>
+          </tr>
+          <tr>
+            <td>Admission Policy:</td>
+            <td>{university.admissionPolicy}</td>
+          </tr>
+          <tr>
+            <td>Year Established:</td>
+            <td>{university.yearEstablish}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   );
 };
