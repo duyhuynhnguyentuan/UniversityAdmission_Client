@@ -128,7 +128,7 @@ export default class HighSchool extends Component<{}, State> {
     return (
       <div className="container">
         <div className={styles.table}>
-          <table className="table table-bordered" style={{ width: '45%', marginLeft: '350px' }}>
+          <table className="table table-bordered" style={{ width: '45%', marginLeft: '350px', marginTop: '90px' }}>
             <thead>
               <tr style={{ textAlign: 'center' }}>
                 <th>Tên trường</th>
