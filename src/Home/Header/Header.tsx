@@ -98,7 +98,7 @@ export default function Header() {
               <NavLink className={`${styles.navLinkItem} nav-link`} to="major">DANH MỤC NGÀNH NGHỀ</NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className={`${styles.navLinkItem} nav-link`} to="majorinplan">KẾ HOẠCH NGÀNH NGHỀ</NavLink>
+              <NavLink className={`${styles.navLinkItem} nav-link`} to="admissionPage">KẾ HOẠCH NGÀNH NGHỀ</NavLink>
             </li>
             <li className="nav-item">
               <NavLink className={`${styles.navLinkItem} nav-link`} to="highschool">THPT</NavLink>

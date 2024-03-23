@@ -1,0 +1,15 @@
+.admission-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .admission-table th, .admission-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .admission-table th {
+    background-color: #f2f2f2;
+    text-align: left;
+  }
+  

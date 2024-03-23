@@ -18,6 +18,7 @@ import { useParams } from 'react-router-dom';
 import AdminPage from './components/AdminPage';
 import StudyProfilePage from './components/StudyProfilePage';
 import AdmissionPlanPage from './components/AdmissionPlanPage';
+import AdmissionPage from './components/AdmissionPage';
 
 function UniversityDetailWrapper() {
   const { code } = useParams<{ code?: string }>(); // Lấy code từ URL
@@ -36,6 +37,7 @@ function App() {
         <Route path="/studyProfile" element={<StudyProfilePage />} />
         <Route path="/admissionPlanPage" element={<AdmissionPlanPage />} />
         <Route path="/subject-calculator" element={<SubjectCalPage />} />
+        <Route path="/admissionPage" element={<AdmissionPage />} />
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/university" element={<Universitys />} />
