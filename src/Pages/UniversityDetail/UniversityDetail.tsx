@@ -1,12 +1,13 @@
 import React from 'react';
 import Axios from 'axios';
+import { useParams } from 'react-router-dom';
 
 interface UniversityDetailProps {
   code: string;
 }
 
 interface University {
-  id: string;
+  _id: string;
   name: string;
   description: string;
   abbreviation: string;
@@ -17,11 +18,12 @@ interface University {
   yearEstablish: number;
 }
 
-const UniversityDetail: React.FC<UniversityDetailProps> = ({ code }) => {
+const UniversityDetail = () => {
   const [university, setUniversity] = React.useState<University | null>(null);
-
+    const { _id } = useParams();
+  console.log(_id)
   React.useEffect(() => {
-    Axios.get<University>(`https://universityadmission.onrender.com/api/v1/university/${code}`)
+    Axios.get<University>(`https://universityadmission.onrender.com/api/v1/university/${_id}`)
       .then((result) => {
         console.log(result.data);
         setUniversity(result.data);
@@ -29,7 +31,7 @@ const UniversityDetail: React.FC<UniversityDetailProps> = ({ code }) => {
       .catch((err) => {
         console.log(err.response?.data);
       });
-  }, [code]);
+  }, [_id]);
 
   if (!university) {
     return <div>Loading...</div>;

@@ -8,7 +8,7 @@ import { faAngleLeft, faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 interface University {
-  id: string;
+  _id: string;
   name: string;
   description: string;
   abbreviation: string;
@@ -74,9 +74,9 @@ export default class Universitys extends Component<{}, State> {
     const currentUniversities = universityLists.slice(indexOfFirstUniversity, indexOfLastUniversity);
 
     return currentUniversities.map((item) => (
-      <tr key={item.id}>
+      <tr key={item._id}>
         <td>
-        <Link to={`/detailUniversity/${item.code}`}>{item.name}</Link>
+        <Link to={`/detailUniversity/${item._id}`}>{item.name}</Link>
         </td>
         <td className={styles.theadAll}>{item.abbreviation}</td>
         <td className={styles.theadAll}>{item.code}</td>

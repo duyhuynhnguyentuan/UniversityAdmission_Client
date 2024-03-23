@@ -22,7 +22,7 @@ import AdmissionPage from './components/AdmissionPage';
 
 function UniversityDetailWrapper() {
   const { code } = useParams<{ code?: string }>(); // Lấy code từ URL
-  return code ? <UniversityDetail code={code} /> : null; // Kiểm tra nếu code tồn tại
+  return code ? <UniversityDetail  /> : null; // Kiểm tra nếu code tồn tại
 }
 
 function App() {
@@ -46,6 +46,7 @@ function App() {
         <Route path="/major" element={<Major />} />
         <Route path="/score" element={<SearchByScore />} />
         <Route path="/highschool" element={<HighSchool />} />
+        <Route path="/detailUniversity/:_id" element={<UniversityDetail />} />
       </Routes>
       <Footer />
     </Router>
